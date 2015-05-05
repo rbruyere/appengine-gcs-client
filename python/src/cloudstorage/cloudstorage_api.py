@@ -383,7 +383,7 @@ def _validate_compose_list(destination_file, file_list,
   list_of_files = []
   for source_file, meta_data in itertools.izip_longest(file_list,
                                                        files_metadata):
-    if not isinstance(source_file, str):
+    if not isinstance(source_file, basestring):
       raise TypeError('Each item of file_list must be a string')
     if source_file.startswith('/'):
       logging.warn('Detected a "/" at the start of the file, '
